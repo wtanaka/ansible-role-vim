@@ -2,4 +2,4 @@
 update_package_names:
 - vim-minimal
 package_names:
-- vim
+- vim-enhanced

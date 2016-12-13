@@ -22,3 +22,5 @@
   when: >
     update_package_names is defined and backcompat_pkg_mgr == "dnf" and
     package_exists_result
+  register: update_result
+  changed_when: "'Upgraded:' in update_result.stdout"

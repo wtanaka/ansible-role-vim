@@ -13,6 +13,17 @@ Example Playbook
       roles:
          - wtanaka.vim
 
+### `vim_should_shortcircuit`
+
+Default: True
+
+When True, this role short-circuits itself if a "vim" is already in the path
+
+### All variables
+
+The full set of configuration options available are visible in
+[defaults/main.yml](defaults/main.yml)
+
 License
 -------
 

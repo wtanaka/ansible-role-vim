@@ -1,6 +1,7 @@
 ---
 - name: update {{update_package_names|join(' ')}} with default package manager
   action: "{{backcompat_pkg_mgr}} name={{item}} state=latest"
+  sudo: yes
   register: result_update_default
   until: result_update_default|success
   # Workaround https://github.com/ansible/ansible/issues/16868 and
@@ -29,6 +30,7 @@
 # Use command since dnf was only added as a module in ansible 1.9.0
 - name: update {{update_package_names | join (' ')}} with dnf
   command: dnf update -y {{update_package_names | join(' ')}}
+  sudo: yes
   when: >
     update_package_names is defined and
     update_package_names|length and

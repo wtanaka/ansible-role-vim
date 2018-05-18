@@ -10,9 +10,4 @@
     should_run: "{{installed|failed or not vim_should_shortcircuit}}"
 
 - include: include_vars.yml
-
-- include: sudo.yml
-  when: ansible_version is not defined or ansible_version.major < 2
-
-- include: become.yml
-  when: ansible_version is defined and ansible_version.major >= 2
+- include: sudoorbecome.yml
